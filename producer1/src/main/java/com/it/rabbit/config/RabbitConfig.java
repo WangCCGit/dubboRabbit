@@ -21,7 +21,7 @@ public class RabbitConfig {
         return new Queue(QUEUE_INFORM_EMAIL);
     }
 
-    //交换机
+    //交换机配置
     @Bean(EXCHANGE_TOPICS_INFORM)
     public Exchange EXCHANGE_TOPICS_INFORM(){
         return ExchangeBuilder.topicExchange(EXCHANGE_TOPICS_INFORM).durable(true).build();

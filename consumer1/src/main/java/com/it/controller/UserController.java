@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("user")
-public class UserController {
+public class UserController implements UserSV{
 
     @Reference(version = "1.0.0")
     private UserSV userSV;
@@ -18,6 +18,9 @@ public class UserController {
         return userSV.say();
     }
 
-
-
+    @Override
+    @RequestMapping(value = "say/s",method = RequestMethod.GET)
+    public String say() {
+        return userSV.say();
+    }
 }
